@@ -1,0 +1,275 @@
+<!doctype html>
+{% load static %}
+
+<html lang=pt-br>
+<head>
+    <!--<meta charset="utf-8">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="">
+    <style>
+        font {
+        }
+
+        /*.cabecalho{*/
+        /*width: 100px; !* you can use % *!*/
+        /*margin-top:-100px;*/
+        /*padding: 0;*/
+        /*transform:  translateY(-80%);*/
+        /*}*/
+        h1 {
+            text-align: center;
+            line-height: 20px;
+            /*cellpadding:"4"*/
+        }
+
+        table {
+            width: 100%;
+            border: none;
+            border-collapse: separate;
+        }
+
+
+        body {
+            font-size: 8pt;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: "Arial";
+        }
+
+        @page {
+            /*size: letter landscape;*/
+            margin: 0.5cm;
+        }
+
+        /*h1 { display: block; height: 400px; line-height: 400px; text-align: center; }*/
+        td, th {
+        {#border: 0.5px solid black;#} border: 0.5px solid black;
+            padding-bottom: 1px;
+        }
+
+        .fadex {
+            width: 150px;
+        }
+
+        .detalhes {
+            width: 250px;
+        }
+
+        .td0, .tr0 {
+            padding-bottom: 0px;
+        }
+        #default{
+            font-size: 10pt;
+            font-weight: bold;
+            color: black;
+            background-color: #E6E6E6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cabecalho">
+    <table class="table0" style="border: none;" cellpadding="3">
+        <tr class="tr0" style="border: none;">
+
+            <td colspan="1" class="td0" style="border: 1px;">
+
+                <img align="left" class="fadex"
+                     src="data:image/png;base64,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"
+                     alt="">
+            </td>
+            <td colspan="2">.
+                <h5>INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO PIAUÍ
+                    CAMPUS TERESINA-CENTRAL
+                    DIRETORIA DE ENSINO
+                    <br>
+                    Dep. de Informação,Ambiente, Saúde e Produção Alimentícia -- DIASPA
+                    Coordenação do Curso Técnico em Desenvolvimento de Sistemas
+
+                </h5>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+            <h1>PLANO DE DISCIPLINA</h1>
+
+
+<table cellpadding="8">
+
+    <tr>
+        <td colspan="8" align="left" id="default">
+            <h5 >Identificação</h5>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="1" align="left" id="default"> CURSO </td>
+        <td colspan="7" align="left">{{ plano.disciplinaProfessor.disciplina.curso }}</td>
+    </tr>
+
+    <tr>
+        <td colspan="1" align="left" id="default"> DISCIPLINA </td>
+        <td colspan="7" align="left"> {{ plano.disciplinaProfessor.disciplina }}</td>
+    </tr>
+
+     <tr>
+        <td colspan="1" align="left" id="default"> MÓDULO </td>
+        <td colspan="1" align="center">{{ plano.disciplinaProfessor.disciplina.modulo }} </td>
+        <td colspan="1" align="left" id="default"> SEMESTRE: </td>
+        <td colspan="1" align="center"> {{ plano.disciplinaProfessor.semestre }}</td>
+        <td colspan="1" align="left" id="default"> ANO: </td>
+        <td colspan="1" align="center"> {{ plano.disciplinaProfessor.ano }}</td>
+        <td colspan="1" align="left" id="default"> CARGA HORÁRIA: </td>
+        <td colspan="1" align="center"> {{ plano.disciplinaProfessor.disciplina.carga_horaria }}</td>
+    </tr>
+    <tr>
+        <td colspan="1" align="left" id="default"> DOCENTE </td>
+        <td colspan="7" align="left"> {{ plano.disciplinaProfessor.professor }}</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="left" id="default"> COORDENADOR </td>
+        <td colspan="6" align="left"> {{ plano.disciplinaProfessor.disciplina.curso.coordenador.nome }}</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left" id="default"> EMENTA: </td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+        {{ plano.ementa| safe }}
+        </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="8" align="left" id="default"> OBJETIVO GERAL DA DISCIPLINA:</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+        {{ plano.objetivos_gerais| safe }}
+        </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="8" align="left" id="default"> OBJETIVOS ESPECÍFICOS DA DISCIPLINA:</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+        {{ plano.objetivos_especificos | safe}}
+
+
+        </td>
+    </tr>
+
+     <tr>
+        <td colspan="8" align="left" id="default"> CONTEÚDO PROGRAMÁTICO:</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+           {{ plano.conteudo_programatico| safe }}
+
+        </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="8" align="left" id="default"> METODOLOGIA:</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+            {{ plano.metodologia | safe}}
+
+
+        </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="8" align="left" id="default">RECURSOS DIDÁTICOS: </td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+            {{ plano.recursos_didaticos| safe }}
+        </td>
+    </tr>
+     <tr>
+        <td colspan="8" align="left" id="default"> SISTEMÁTICA DE AVALIAÇÃO:</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+        {{ plano.sistema_de_avaliacao| safe }}
+
+
+        </td>
+    </tr>
+
+
+       <tr>
+        <td colspan="8" align="left" id="default"> REFERÊNCIAS (BÁSICA E COMPLEMENTAR):</td>
+    </tr>
+    <tr>
+        <td colspan="8" align="left">
+        <h5>Básica</h5>
+        <br>
+           {{ plano.referencias_basicas | safe}}
+<br>
+            <h5>COMPLEMENTAR</h5>
+
+            <br>
+             {{ plano.referencias_complementares| safe }}
+
+
+                    <br>
+            <br>
+
+
+        </td>
+    </tr>
+ <tr>
+        <td colspan="8" align="left" id="default">ASSINATURAS:</td>
+    </tr>
+
+
+
+    <tr>
+        <td style="border-left:none; border-bottom: none; border-right: none; " colspan="4">
+            <br>
+            <br>
+            <h5><br>____________________________________________________</h5>
+            <h5>{{ plano.disciplinaProfessor.professor | safe}}</h5>
+            <h5>Professor</h5>
+        </td>
+       <td style="border-left:none; border-bottom: none; border-right: none; " colspan="4">
+            <br>
+            <br>
+            <h5><br>____________________________________________________</h5>
+            <h5>Departamento Pedagógico</h5>
+            <h5>Carimbo e Assinatura</h5>
+        </td>
+    </tr>
+     <tr>
+        <td style="border: none; " colspan="4">
+            <br>
+            <br>
+            <h5><br>____________________________________________________</h5>
+            <h5>{{ plano.disciplinaProfessor.disciplina.curso.coordenador.nome | safe }}</h5>
+            <h5>Coordenador</h5>
+        </td>
+       <td style="border:none;" colspan="4">
+
+        </td>
+    </tr>
+
+
+
+
+
+</table>
+
+
+</body>
+</html>
